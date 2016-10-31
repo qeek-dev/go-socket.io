@@ -73,9 +73,8 @@ func (s *socket) Emit(event string, args ...interface{}) error {
 }
 
 func (s *socket) Disconnect() error {
-	err : = s.conn.Close();
-	if err = nil {
-	   return err
+	if err : = s.conn.Close();err != nil {
+		return err
 	}
 	return nil
 }
