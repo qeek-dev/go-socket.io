@@ -32,7 +32,7 @@ type Socket interface {
 	Leave(room string) error
 	
         //new Disconnect 
-	Disconnect() error
+	Disconnect()
 	
 	// BroadcastTo broadcasts an event to the room with given args.
 	BroadcastTo(room, event string, args ...interface{}) error
@@ -72,11 +72,8 @@ func (s *socket) Emit(event string, args ...interface{}) error {
 	return nil
 }
 
-func (s *socket) Disconnect() error {
-	if err : = s.conn.Close();err != nil {
-		return err
-	}
-	return nil
+func (s *socket) Disconnect() {
+	s.conn.Close()
 }
 
 func (s *socket) send(args []interface{}) error {
