@@ -4,7 +4,8 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/googollee/go-engine.io"
+	//"github.com/googollee/go-engine.io"
+	"gopkg.in/googollee/go-engine.io.v1"
 )
 
 // Socket is the socket object of socket.io.
