@@ -4,8 +4,7 @@ import (
 	"net/http"
 	"sync"
 
-	//"github.com/googollee/go-engine.io"
-	"gopkg.in/googollee/go-engine.io.v1"
+	"github.com/googollee/go-engine.io"
 )
 
 // Socket is the socket object of socket.io.
@@ -31,10 +30,10 @@ type Socket interface {
 
 	// Leave leaves the room.
 	Leave(room string) error
-	
-        //new Disconnect 
+
+	//new Disconnect
 	Disconnect()
-	
+
 	// BroadcastTo broadcasts an event to the room with given args.
 	BroadcastTo(room, event string, args ...interface{}) error
 }
